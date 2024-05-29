@@ -30,9 +30,9 @@
 #define BLYNK_PRINT Serial
 
 /* Fill in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "xxxxxx"        
-#define BLYNK_TEMPLATE_NAME "xxxxxx"    
-#define BLYNK_AUTH_TOKEN "xxxxxx"       //ใส่ token ที่ได้จาก blynk
+#define BLYNK_TEMPLATE_ID "xxxx"
+#define BLYNK_TEMPLATE_NAME "xxxx"   
+#define BLYNK_AUTH_TOKEN "xxx"      //ใส่ token ที่ได้จาก blynk
 
 #include <WiFi.h>
 #include <WiFiClient.h>
@@ -40,19 +40,20 @@
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "xxxxxx";   //ใส่ชื่อ wifi ที่เราจะใช้เชื่อมต่อ
-char pass[] = "xxxxxx";   //ใส่รหัส wifi ที่เราจะใช้เชื่อมต่อ
-
+char ssid[] = "xxxxx";   //ใส่ชื่อ wifi ที่เราจะใช้เชื่อมต่อ
+char pass[] = "xxxxx";   //ใส่รหัส wifi ที่เราจะใช้เชื่อมต่อ
 void setup()
 {
   // Debug console
   Serial.begin(115200);
-
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
 }
 
 void loop()
 {
   Blynk.run();
+  Blynk.virtualWrite(V0,1);   //ใส่(virtualPin,(0,1)) 0 = ดับ || 1 = ติด
+  delay(1000);
+  Blynk.virtualWrite(V0,0);
 }
 
