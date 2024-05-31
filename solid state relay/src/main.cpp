@@ -8,9 +8,9 @@ void setup() {
 void loop() {
   // Turn the relay ON
   digitalWrite(RELAY_PIN, LOW);
-  delay(5000); // Wait for 1 second
+  delay(1000); // Wait for 1 second
   
   // Turn the relay OFF
   digitalWrite(RELAY_PIN, HIGH);
-  delay(10000); // Wait for 1 second
+  delay(1000); // Wait for 1 second
 }
